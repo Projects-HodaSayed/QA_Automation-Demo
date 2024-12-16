@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="59.081">
+    <testcase classname="F_Login | users could use login functionality to use their accounts" name="user could login with valid user and password" time="36.885">
+        <system-out><![CDATA[When user go to login page..................................................passed
+When user login with User "bob@example.com" and "10203040"..................passed
+And user press on login button..............................................passed
+Then user login to the system successfully..................................passed
+Then Logout.................................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="F_Login | users could use login functionality to use their accounts" name="user could login with locked user and password" time="5.91">
+        <system-out><![CDATA[When user login with User "alice@example.com" and "10203040"................passed
+And user press on login button..............................................passed
+Then Error returned to user "Locked"........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="F_Login | users could use login functionality to use their accounts" name="user could login with NotMatched user and password" time="5.14">
+        <system-out><![CDATA[When user login with User "1@2.com" and "f-o-o".............................passed
+And user press on login button..............................................passed
+Then Error returned to user "NotMatched"....................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="F_Login | users could use login functionality to use their accounts" name="user could login with Empty user and password" time="5.379">
+        <system-out><![CDATA[When user login with User "" and "".........................................passed
+And user press on login button..............................................passed
+Then Error returned to user "EmptyUser".....................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="F_Login | users could use login functionality to use their accounts" name="user could login with user and Empty password" time="5.246">
+        <system-out><![CDATA[When user login with User "bob@example.com" and ""..........................passed
+And user press on login button..............................................passed
+Then Error returned to user "EmptyPass".....................................passed
+]]></system-out>
+    </testcase>
+</testsuite>

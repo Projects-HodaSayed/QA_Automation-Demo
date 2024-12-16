@@ -15,6 +15,12 @@ public class LoginPage extends AndroidBaseTest {
     WebDriverWait wait;
     private final By manuButton = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"open menu\"]/android.widget.ImageView");
     private final By loginMenu = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"menu item log in\"]");
+
+    private final By logoutMenu = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"menu item log out\"]");
+
+    private final By confirmlogoutMenu = AppiumBy.xpath("//android.widget.Button[@resource-id=\"android:id/button1\"]");
+
+    private final By okButtonlogoutMenu = AppiumBy.xpath("//android.widget.Button[@resource-id=\"android:id/button1\"]");
     private final By userNameField = AppiumBy.xpath("//android.widget.EditText[@content-desc=\"Username input field\"]");
     private final By passwordField = AppiumBy.xpath("//android.widget.EditText[@content-desc=\"Password input field\"]");
     private final By loginButton = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"Login button\"]");
@@ -31,6 +37,12 @@ public class LoginPage extends AndroidBaseTest {
         clickOnElement(loginMenu,10);
     }
 
+    public void userLogOut() throws Exception {
+        clickOnElement(manuButton,10);
+        clickOnElement(logoutMenu,10);
+        clickOnElement(confirmlogoutMenu,10);
+        clickOnElement(okButtonlogoutMenu,10);
+    }
     public void enterUserNameAndPass(String userName, String userPass) throws Exception {
         clickOnElement(userNameField,20);
         typeText(userNameField,userName,15);

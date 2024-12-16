@@ -44,4 +44,14 @@ public class Login_StepDef
     {
         login.validateUserError(errorType);
     }
+
+    @Then("Logout")
+    public void userLogout()
+    {
+        try {
+            login.userLogOut();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
